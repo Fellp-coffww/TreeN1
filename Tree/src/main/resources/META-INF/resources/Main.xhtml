@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Inicio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fa;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0056b3;
+            font-size: 80px;
+            margin-top: 200px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0056b3;
+            font-size: 80px;
+            margin-top: 0;
+        }
+
+        h3 {
+            text-align: center;
+            font-family: 'Segoe UI', 'Arial Narrow', Arial, sans-serif;
+            color: #FFFFFF;
+            font-size: 30px;
+        }
+
+        /* Estilização do menu superior */
+        .menu-bar {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilização dos botões laterais */
+        .side-buttons {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .side-buttons button {
+            margin: 10px 0;
+            padding: 12px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .side-buttons button:hover {
+            background-color: #004494;
+        }
+
+        /* Espaçamento para não sobrepor os elementos */
+        .content {
+            padding-top: 90px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .ui-diagram-element {
+            border: 0.1em dotted #d4e06b;
+            width: 14em;
+            height: 4em;
+            line-height: 4em;
+            text-align: center;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            line-height: 1.6;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        /* Estilo do card */
+        .ui-card {
+            background-color: white;
+            border: 1px solid #e3e6f0;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .ui-card h3 {
+            font-size: 22px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        /* Estilo para o título do card */
+        .ui-card .ui-card-title {
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+    </style>
+</h:head>
+
+<h:body>
+
+<div>
+
+    <!-- Menu Superior -->
+    <div class="menu-bar">
+        Aplicação de árvore - Estrutura de dados 2 - JELF Dynamics
+    </div>
+
+    <!-- Cartão com informações da árvore -->
+    <p:card class="ui-card" style="width: 30rem; margin: 20px auto;">
+        <f:facet name="title">
+            <h3>Informações da árvore</h3>
+        </f:facet>
+
+        <p> Tamanho da árvore: #{TreeView.treeSize}</p>
+        <p> Quantidade de nós folhas: #{TreeView.leafNodes}</p>
+        <p> Quantidade de nós não folhas: #{TreeView.nonLeafNodes}</p>
+        <p> Grau da árvore: #{TreeView.degree}</p>
+    </p:card>
+
+    <!-- Conteúdo principal -->
+    <div class="content">
+        <h:form>
+
+            <!-- Diagrama da árvore -->
+            <p:diagram value="#{TreeView.model}" style="height:800px" styleClass="ui-widget-content" />
+
+        </h:form>
+    </div>
+</div>
+
+</h:body>
+</html>

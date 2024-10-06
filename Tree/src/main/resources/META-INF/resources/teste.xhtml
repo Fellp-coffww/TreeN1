@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:body>
+
+    <div class="card">
+
+        <p:diagram value="#{treeView.model}" style="height:400px" styleClass="ui-widget-content"/>
+        <p:commandButton value="XLS" styleClass="mr-2 mb-2">
+            <p:dataExporter type="xls" target="tbl" fileName="products"/>
+        </p:commandButton>
+
+    </div>
+
+</h:body>
+</html>
